@@ -4,6 +4,11 @@
     "license": "CC-BY-SA 3.0",
     "minimum-stability": "dev",
     "require": {
-	"trismegiste/prolog": "1.*"
+        "trismegiste/prolog": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Trismegiste\\HiraganaBridge": ""
+        }
     }
 }
