@@ -1,0 +1,9 @@
+{
+    "name": "trismegiste/hiragana",
+    "description": "Convert Hepburn to Hiragana",
+    "license": "CC-BY-SA 3.0",
+    "minimum-stability": "dev",
+    "require": {
+	"trismegiste/prolog": "1.*"
+    }
+}
