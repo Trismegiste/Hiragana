@@ -1,17 +1,17 @@
 <?php
 
 /*
- * Hiragana Bridge
+ * Hiragana
  */
 
-namespace Trismegiste\HiraganaBridge;
+namespace Trismegiste\Hiragana;
 
 include_once __DIR__ . '/vendor/autoload.php';
 
 use Trismegiste\WamBundle\Prolog\WAMService;
 
 /**
- * Converter converts Hepburn notation to Hiragana and vice-versa
+ * Converter converts Hepburn notation to Hiragana
  */
 class Converter
 {
@@ -26,11 +26,16 @@ class Converter
 
     public function toHiragana($str)
     {
-        $solve = $this->wam->runQuery("[k,u,s,a,n,a,g,i], X).");
-        print_r($solve);
+        $exploded = implode(',', str_split($str));
+        return $this->wam->runQuery("solve([$exploded], X).");
     }
 
 }
 
 $obj = new Converter();
-$obj->toHiragana('r');
+$result = $obj->toHiragana($argv[1]);
+foreach ($result as $sol) {
+    if ($sol->succeed) {
+        echo $sol->variable['X'] . PHP_EOL;
+    }
+}
