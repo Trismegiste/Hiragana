@@ -6,8 +6,6 @@
 
 namespace Trismegiste\Hiragana;
 
-include_once __DIR__ . '/vendor/autoload.php';
-
 use Trismegiste\WamBundle\Prolog\WAMService;
 
 /**
@@ -30,12 +28,4 @@ class Converter
         return $this->wam->runQuery("solve([$exploded], X).");
     }
 
-}
-
-$obj = new Converter();
-$result = $obj->toHiragana($argv[1]);
-foreach ($result as $sol) {
-    if ($sol->succeed) {
-        echo $sol->variable['X'] . PHP_EOL;
-    }
 }
