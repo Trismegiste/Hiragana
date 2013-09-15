@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Hiragana
+ * Hiragana - a small piece of code for demonstrating
  */
 
 include_once __DIR__ . '/vendor/autoload.php';

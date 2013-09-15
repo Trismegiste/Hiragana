@@ -23,7 +23,8 @@ This tool was primarily designed for massive conversion of japanese first and la
 a database, it is NOT intended to convert or translate full text with foreign words.
 
 It does not support katakana nor foreign phonem like 'fa', 'va' or old stuff
-like 'wi' or 'we'
+like 'wi' or 'we'. If you have single quote in word (like the first name 
+Jun'ichiro), split the string. Convert all letters to lower case.
 
 Since Hepburn translation is not a bijection, the converter returns an array 
 with zero, one or many solutions. 

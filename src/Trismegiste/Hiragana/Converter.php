@@ -74,6 +74,13 @@ class Converter
         $this->wam->runQuery("consult('" . __DIR__ . "/rules.pro').");
     }
 
+    /**
+     * Convert a word in hepburn to hiragana
+     * 
+     * @param string $str
+     * 
+     * @return array an array of string results
+     */
     public function toHiragana($str)
     {
         $exploded = implode(',', str_split($str));
@@ -94,6 +101,13 @@ class Converter
         return $japanese;
     }
 
+    /**
+     * UTF-8 transform
+     * 
+     * @param string|object $char a char or a list of a char and modifier
+     * 
+     * @return string the utf-8 character (multibyte of course)
+     */
     protected function map($char)
     {
         if (is_string($char)) {
