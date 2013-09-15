@@ -66,7 +66,7 @@ trans([n],n).
 
 trans([j,i], [shi,daku]).
 trans([b,u], [fu,daku]).
-trans([d,z,u], [tsu,daku]).
+trans([z,u], [tsu,daku]).
 trans([g,V], [X,daku]) :- trans([k,V], X).
 trans([z,V], [X,daku]) :- trans([s,V], X).
 trans([d,V], [X,daku]) :- trans([t,V], X).
@@ -79,6 +79,7 @@ solve([],[]).
 solve([C|[V|T]], [H|S]) :- trans([C,V], H) , solve(T, S).
 solve([C|[C|[V|T]]], [[tsu,small]|[H|S]]) :- double(C), trans([C,V], H) , solve(T, S).
 
+solve([j|[V|T]], [[shi,daku]|[[Y,small]|S]]) :- vowel(V) , trans([y, V], Y) , solve(T, S).
 solve([C|[y|[V|T]]], [K|[[Y,small]|S]]) :- trans([C,i], K) , trans([y, V], Y) , solve(T, S).
 solve([C1|[C2|[V|T]]], [H|S]) :- trans([C1,C2,V], H) , solve(T, S).
 solve([C|[h|[V|T]]], [H|[[Y,small]|S]]) :- trans([C,h,i], H) , trans([y, V], Y) , solve(T, S).
