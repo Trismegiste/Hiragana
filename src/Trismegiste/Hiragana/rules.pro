@@ -77,11 +77,11 @@ trans([p,V], [X,handa]) :- trans([h,V], X).
 
 solve([],[]).
 solve([C|[V|T]], [H|S]) :- trans([C,V], H) , solve(T, S).
-solve([C|[C|[V|T]]], [[tsu,petit]|[H|S]]) :- double(C), trans([C,V], H) , solve(T, S).
+solve([C|[C|[V|T]]], [[tsu,small]|[H|S]]) :- double(C), trans([C,V], H) , solve(T, S).
 
-solve([C|[y|[V|T]]], [K|[[Y,petit]|S]]) :- trans([C,i], K) , trans([y, V], Y) , solve(T, S).
+solve([C|[y|[V|T]]], [K|[[Y,small]|S]]) :- trans([C,i], K) , trans([y, V], Y) , solve(T, S).
 solve([C1|[C2|[V|T]]], [H|S]) :- trans([C1,C2,V], H) , solve(T, S).
-solve([C|[h|[V|T]]], [H|[[Y,petit]|S]]) :- trans([C,h,i], H) , trans([y, V], Y) , solve(T, S).
+solve([C|[h|[V|T]]], [H|[[Y,small]|S]]) :- trans([C,h,i], H) , trans([y, V], Y) , solve(T, S).
 
 solve([V|T],[V|S]) :- vowel(V) , solve(T, S).
 solve([n|[V|X]],Z) :- vowel(V) , ! , fail.

@@ -10,11 +10,4 @@ use Trismegiste\Hiragana\Converter;
 
 $obj = new Converter();
 $result = $obj->toHiragana($argv[1]);
-foreach ($result as $sol) {
-    if ($sol->succeed) {
-        print_r($sol->variable['X']);
-        $iter = $sol->getQueryVars();
-        print_r($iter['X']);
-    }
-    //echo "さ";
-}
+print_r($result);
