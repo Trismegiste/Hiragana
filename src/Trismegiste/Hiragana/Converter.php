@@ -71,7 +71,7 @@ class Converter
     public function __construct()
     {
         $this->wam = new WAMService();
-        $this->wam->runQuery("consult('" . __DIR__ . "/rules.pro').");
+        $this->wam->loadProlog(__DIR__ . '/rules.pro');
     }
 
     /**
