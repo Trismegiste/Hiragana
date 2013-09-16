@@ -10,10 +10,10 @@ This is a PHP 5.4 library for converting japanese words written in **Hepburn** n
 (i.e in western letters) to **hiragana** phonetic letters.
 
 ```
-nippon => にっ゚ほん
+nippon => にっぽん
 toukyou => とうきょう
-shinjuku => しん゙しゅく
-shinjyuku => しん゙しゅく
+shinjuku => しんじゅく
+shinjyuku => しんじゅく
 taishakuten => たいしゃくてん
 ```
 
@@ -57,8 +57,8 @@ $ php demo.php sakurazukamori
 
 Array
 (
-    [0] => さくら゙つかもり
-    [1] => さくら゙すかもり
+    [0] => さくらづかもり
+    [1] => さくらずかもり
 )
 ```
 

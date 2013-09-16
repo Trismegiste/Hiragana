@@ -119,9 +119,9 @@ class Converter
                 case 'small' :
                     return $this->charMap[(string) $char];
                 case 'daku':
-                    return chr(0xe3) . chr(0x82) . chr(0x99) . $this->charMap[$kana];
+                    return $this->charMap[$kana] . "\xe3\x82\x99";
                 case 'handa':
-                    return chr(0xe3) . chr(0x82) . chr(0x9a) . $this->charMap[$kana];
+                    return $this->charMap[$kana] . "\xe3\x82\x9a";
             }
         }
     }
