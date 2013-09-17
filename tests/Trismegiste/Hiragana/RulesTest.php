@@ -4,7 +4,7 @@
  * Hiragana
  */
 
-namespace Package;
+namespace tests\Trismegiste\Hiragana;
 
 use tests\Trismegiste\PrologUnit\TestCase;
 
@@ -14,14 +14,14 @@ use tests\Trismegiste\PrologUnit\TestCase;
 class RulesTest extends TestCase
 {
 
-    protected function getProgramPath()
+    public static function getProgramPath()
     {
         return realpath(__DIR__ . '/../../../src/Trismegiste/Hiragana/rules.pro');
     }
 
     public function testSimple()
     {
-        $this->assertSuccessEquals(1, 'solve([s,a,k,u,r,a], [sa,ku,ra]).');
+        $this->assertAtLeastOneSuccess('solve([s,a,k,u,r,a], [sa,ku,ra]).');
     }
 
     public function testDouble()

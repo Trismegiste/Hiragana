@@ -14,26 +14,26 @@ use Trismegiste\WamBundle\Prolog\WAMService;
 abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
 
-    protected $wam;
+    protected static $wam;
 
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->wam = new WAMService();
-        $this->wam->loadProlog($this->getProgramPath());
+        static::$wam = new WAMService();
+        static::$wam->loadProlog(static::getProgramPath());
     }
 
-    abstract protected function getProgramPath();
+ //   abstract public static function getProgramPath();
 
     protected function assertAtLeastOneSuccess($query)
     {
-        $result = $this->wam->runQuery($query);
+        $result = static::$wam->runQuery($query);
         $this->assertTrue(count($result) > 0);
         $this->assertTrue($result[0]->succeed);
     }
 
     protected function assertSuccessEquals($n, $query)
     {
-        $result = $this->wam->runQuery($query);
+        $result = static::$wam->runQuery($query);
         $this->assertTrue(count($result) >= $n);
         foreach ($result as $k => $solution) {
             $this->assertEquals($k < $n, $solution->succeed);
