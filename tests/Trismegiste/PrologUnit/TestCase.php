@@ -18,11 +18,10 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
 
     public static function setUpBeforeClass()
     {
+        $fqcn = get_called_class();
         static::$wam = new WAMService();
-        static::$wam->loadProlog(static::getProgramPath());
+        static::$wam->loadProlog($fqcn::getProgramPath());
     }
-
- //   abstract public static function getProgramPath();
 
     protected function assertAtLeastOneSuccess($query)
     {
