@@ -7,7 +7,8 @@
 include_once __DIR__ . '/vendor/autoload.php';
 
 use Trismegiste\Hiragana\Converter;
+use Trismegiste\WamBundle\Prolog\WAMService;
 
-$obj = new Converter();
+$obj = new Converter(new WAMService());
 $result = $obj->toHiragana($argv[1]);
 print_r($result);

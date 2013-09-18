@@ -6,7 +6,7 @@
 
 namespace Trismegiste\Hiragana;
 
-use Trismegiste\WamBundle\Prolog\WAMService;
+use Trismegiste\WamBundle\Prolog\PrologContext;
 
 /**
  * Converter converts Hepburn notation to Hiragana
@@ -68,9 +68,9 @@ class Converter
         'n' => 'ん'
     );
 
-    public function __construct()
+    public function __construct(PrologContext $wam)
     {
-        $this->wam = new WAMService();
+        $this->wam = $wam;
         $this->wam->loadProlog(__DIR__ . '/rules.pro');
     }
 
