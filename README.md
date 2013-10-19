@@ -2,8 +2,6 @@
 
 A converter from Hepburn notation (or approximation) to Hiragana
 
--- alpha release untested --
-
 ## What
 
 This is a PHP 5.4 library for converting japanese words written in **Hepburn** notation(s) 
@@ -39,14 +37,15 @@ git clone & composer install are your friends
 
 ```php
 use Trismegiste\Hiragana\Converter;
+use Trismegiste\WamBundle\Prolog\WAMService;
 
-$obj = new Converter();
+$obj = new Converter(new WAMService());
 $result = $obj->toHiragana("suiseiseki");
 echo $result[0];
 // outputs 'すいせいせき'
 ```
 
-The initialisation of this Converter is very slow, because it compiles a Prolog
+The initialisation of this Converter is very slow because it compiles a **Prolog**
 program, but for a batch converter, it's not an issue. If you want to convert
 names within a web environment, I suggest you to compile the prolog code into WAM
 code and cache it.
@@ -67,6 +66,9 @@ Array
 Since this tool is full utf-8, don't expect to output hiragana in the crappy
 console of Windows(c)(r)(tm).
 
-## Todo
+## Unit tests
 
-Prolog tests and php tests
+Simply run with :
+```
+$ phpunit
+```
