@@ -6,7 +6,7 @@
 
 namespace Trismegiste\Hiragana;
 
-use Trismegiste\WamBundle\Prolog\PrologContext;
+use Trismegiste\Prolog\PrologContext;
 
 /**
  * Converter converts Hepburn notation to Hiragana

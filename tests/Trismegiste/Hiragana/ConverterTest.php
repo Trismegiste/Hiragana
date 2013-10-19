@@ -7,8 +7,8 @@
 namespace tests\Trismegiste\Hiragana;
 
 use Trismegiste\Hiragana\Converter;
-use Trismegiste\WamBundle\Prolog\Solution\Lis;
-use Trismegiste\WamBundle\Prolog\Solution;
+use Trismegiste\Prolog\Solution\Lis;
+use Trismegiste\Prolog\Solution;
 
 /**
  * ConverterTest tests Converter
@@ -21,7 +21,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->wam = $this->getMockForAbstractClass('Trismegiste\WamBundle\Prolog\PrologContext');
+        $this->wam = $this->getMockForAbstractClass('Trismegiste\Prolog\PrologContext');
         $this->service = new Converter($this->wam);
     }
 

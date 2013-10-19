@@ -6,7 +6,7 @@
 
 namespace tests\Trismegiste\PrologUnit;
 
-use Trismegiste\WamBundle\Prolog\WAMService;
+use Trismegiste\Prolog\WAMService;
 
 /**
  * TestCase is a template method pattern to test prolog programs

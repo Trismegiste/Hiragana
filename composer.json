@@ -4,7 +4,7 @@
     "license": "CC-BY-SA 3.0",
     "minimum-stability": "dev",
     "require": {
-        "trismegiste/prolog": "dev-master"
+        "trismegiste/wam-prolog": "dev-master"
     },
     "autoload": {
         "psr-0": {
